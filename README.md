@@ -28,4 +28,4 @@ The principal paid this month
 The remaining loan balance at the end of the month 
 
 
-![Alt text](/MainForm.jpg?raw=true "Loan Calculator")
+![alt text](https://github.com/Alymzhan/LoanCalculator/blob/main/MainForm.JPG)
