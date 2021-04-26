@@ -42,6 +42,7 @@ namespace LoanCalculator
             this.btnCalculate = new System.Windows.Forms.Button();
             this.numBalance = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPoolLevel = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lbLoanName = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace LoanCalculator
             this.Interest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Principal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RemBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPoolLevel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numTerm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRate)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -179,6 +179,16 @@ namespace LoanCalculator
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Results";
             // 
+            // btnPoolLevel
+            // 
+            this.btnPoolLevel.Location = new System.Drawing.Point(238, 307);
+            this.btnPoolLevel.Name = "btnPoolLevel";
+            this.btnPoolLevel.Size = new System.Drawing.Size(117, 29);
+            this.btnPoolLevel.TabIndex = 4;
+            this.btnPoolLevel.Text = "Pool Level";
+            this.btnPoolLevel.UseVisualStyleBackColor = true;
+            this.btnPoolLevel.Click += new System.EventHandler(this.btnPoolLevel_Click);
+            // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(138, 307);
@@ -220,7 +230,9 @@ namespace LoanCalculator
             this.gridResults.Location = new System.Drawing.Point(18, 57);
             this.gridResults.Name = "gridResults";
             this.gridResults.RowHeadersWidth = 51;
+            this.gridResults.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridResults.RowTemplate.Height = 29;
+            this.gridResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridResults.Size = new System.Drawing.Size(559, 243);
             this.gridResults.TabIndex = 0;
             // 
@@ -232,7 +244,7 @@ namespace LoanCalculator
             this.LoanId.Name = "LoanId";
             this.LoanId.ReadOnly = true;
             this.LoanId.Visible = false;
-            this.LoanId.Width = 70;
+            this.LoanId.Width = 90;
             // 
             // Month
             // 
@@ -241,7 +253,7 @@ namespace LoanCalculator
             this.Month.MinimumWidth = 6;
             this.Month.Name = "Month";
             this.Month.ReadOnly = true;
-            this.Month.Width = 70;
+            this.Month.Width = 90;
             // 
             // Interest
             // 
@@ -250,7 +262,7 @@ namespace LoanCalculator
             this.Interest.MinimumWidth = 6;
             this.Interest.Name = "Interest";
             this.Interest.ReadOnly = true;
-            this.Interest.Width = 90;
+            this.Interest.Width = 120;
             // 
             // Principal
             // 
@@ -259,7 +271,7 @@ namespace LoanCalculator
             this.Principal.MinimumWidth = 6;
             this.Principal.Name = "Principal";
             this.Principal.ReadOnly = true;
-            this.Principal.Width = 90;
+            this.Principal.Width = 120;
             // 
             // RemBalance
             // 
@@ -268,17 +280,7 @@ namespace LoanCalculator
             this.RemBalance.MinimumWidth = 6;
             this.RemBalance.Name = "RemBalance";
             this.RemBalance.ReadOnly = true;
-            this.RemBalance.Width = 90;
-            // 
-            // btnPoolLevel
-            // 
-            this.btnPoolLevel.Location = new System.Drawing.Point(238, 307);
-            this.btnPoolLevel.Name = "btnPoolLevel";
-            this.btnPoolLevel.Size = new System.Drawing.Size(117, 29);
-            this.btnPoolLevel.TabIndex = 4;
-            this.btnPoolLevel.Text = "Pool Level";
-            this.btnPoolLevel.UseVisualStyleBackColor = true;
-            this.btnPoolLevel.Click += new System.EventHandler(this.btnPoolLevel_Click);
+            this.RemBalance.Width = 120;
             // 
             // MainForm
             // 
@@ -331,12 +333,12 @@ namespace LoanCalculator
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lbLoanName;
         private System.Windows.Forms.DataGridView gridResults;
+        private System.Windows.Forms.Button btnPoolLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Month;
         private System.Windows.Forms.DataGridViewTextBoxColumn Interest;
         private System.Windows.Forms.DataGridViewTextBoxColumn Principal;
         private System.Windows.Forms.DataGridViewTextBoxColumn RemBalance;
-        private System.Windows.Forms.Button btnPoolLevel;
     }
 }
 

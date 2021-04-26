@@ -26,3 +26,6 @@ The month (1 corresponding to the 1st month of payment, through the total number
 The interest paid this month 
 The principal paid this month 
 The remaining loan balance at the end of the month 
+
+
+![Alt text](/MainForm.jpg?raw=true "Loan Calculator")

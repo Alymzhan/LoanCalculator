@@ -101,9 +101,8 @@ namespace LoanCalculator
 
                 //Refreshing Results GridView
                 LoanNum = 1;
-                gridResults.DataSource = typeof(BindingList<Cashflow>);
-                var result = Results.Where(x => x.LoanId == LoanNum).ToList();
-                gridResults.DataSource = result;
+                var result = new BindingList<Cashflow>(Results.Where(x => x.LoanId == LoanNum).ToList());
+                gridResultUpdate(result);
 
             }
             else 
@@ -120,9 +119,8 @@ namespace LoanCalculator
             {
                 LoanNum++;
                 lbLoanName.Text = "Loan " + LoanNum;
-                gridResults.DataSource = typeof(BindingList<Cashflow>);
-                var result = Results.Where(x => x.LoanId == LoanNum).ToList();
-                gridResults.DataSource = result;
+                var result = new BindingList<Cashflow>(Results.Where(x => x.LoanId == LoanNum).ToList());
+                gridResultUpdate(result);
             }            
         }
 
@@ -132,17 +130,23 @@ namespace LoanCalculator
             {
                 LoanNum--;
                 lbLoanName.Text = "Loan " + LoanNum;
-                gridResults.DataSource = typeof(BindingList<Cashflow>);
-                var result = Results.Where(x => x.LoanId == LoanNum).ToList();
-                gridResults.DataSource = result;
+                var result = new BindingList<Cashflow>(Results.Where(x => x.LoanId == LoanNum).ToList());
+                gridResultUpdate(result);
             }
         }
 
         private void btnPoolLevel_Click(object sender, EventArgs e)
         {
             lbLoanName.Text = "Pool Level";
+            gridResultUpdate(PoolLevel);
+        }
+
+        private void gridResultUpdate(BindingList<Cashflow> dataSource)
+        {
             gridResults.DataSource = typeof(BindingList<Cashflow>);
-            gridResults.DataSource = PoolLevel;
+            gridResults.DataSource = dataSource;
+            gridResults.Columns["LoanId"].Visible = false;
+            gridResults.Columns["Month"].Width = 90;
         }
     }
 }
